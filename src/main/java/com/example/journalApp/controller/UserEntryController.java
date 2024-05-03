@@ -61,7 +61,7 @@ public class UserEntryController {
     }
     @GetMapping("greet/")
     public ResponseEntity<?> greetings(){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return new ResponseEntity<>("HI" + authentication.getName()+"Weather feels like "+weatherService.getWheather("Mumbai").getList().get(0).getMain().getFeelsLike(), HttpStatus.OK);
     }
 
